@@ -26,6 +26,9 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-snackbar color="red" v-model="errorLogin" danger multiline timeout="2000">
+    Usuário ou senha inválidos
+  </v-snackbar>
   </v-container>
 </template>
 
@@ -44,6 +47,8 @@ export default {
     login() {
       if (this.user.email === 'bruno' && this.user.password === 'bruno') {
         this.$router.push({ name: "home" });
+      } else {
+        this.errorLogin = true;
       }
     },
   },
