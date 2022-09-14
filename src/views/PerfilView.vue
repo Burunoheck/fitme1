@@ -1,11 +1,29 @@
 <template>
   <v-container class="pa-8" fluid>
     <h1 class="h1">Meu Perfil</h1>
+    <v-form>
+      <v-container>
+        <v-text-field label="Nome" v-model="nome">
+        </v-text-field>
+        <v-text-field label="Sobrenome" v-model="sobrenome">
+        </v-text-field>
+        <v-btn color="primary">
+          salvar
+        </v-btn>
+      </v-container>
+    </v-form>
   </v-container>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return{
+      nome: "",
+      sobrenome: "",
+    }
+  }
+};
 </script>
 
 <style></style>

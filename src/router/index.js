@@ -7,16 +7,32 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    component: () => import('@/layouts/DefaultView'),
+    children: [
+      {
+        path: '/',
+        name: 'home',
+        component: HomeView
+      },
+      {
+        path: '/perfil',
+        name: 'PerfilView',
+        component: () => import(/* webpackChunkName: "perfil" */ '../views/PerfilView.vue')
+      },
+    ]
   },
   {
-    path: '/perfil',
-    name: 'PerfilView',
-    component: () => import(/* webpackChunkName: "perfil" */ '../views/PerfilView.vue')
+    path: '/',
+    component: () => import('@/layouts/BlankView'),
+    children: [
+      {
+      path: '/login',
+      name: 'LoginView',
+      component: () => import(/* webpackChunkName: "login" */ '../views/LoginView.vue')
+      }
+    ]
   }
 ]
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
