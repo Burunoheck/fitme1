@@ -16,7 +16,7 @@
     </v-app>
     <v-container>
     <v-col cols="12">
-      <h1 class="h1 mb-8 d-flex justify-center">Nome do Usuário</h1>
+      <h1 class="h1 d-flex justify-center">Nome do Usuário</h1>
       <v-icon dark size="300" class="d-flex justify-center" name="usuario">mdi-account-circle Nome_Usuário</v-icon>
       <v-divider dark></v-divider>
       <v-divider dark></v-divider>

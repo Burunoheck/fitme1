@@ -73,10 +73,24 @@
 </script>
 
 <style>
+html{
+  overflow-y:hidden
+}
 .login{
   color: #4A3CA5;
 }
 .cursor-pointer{
   cursor: pointer;
+}
+body::-webkit-scrollbar {
+  width: 5px;              
+}
+body::-webkit-scrollbar-track {
+  background: rgb(163, 206, 209);        
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.473);   
+  border-radius: 200px;   
+  border: 1px solid rgb(163, 206, 209);   
 }
 </style>
