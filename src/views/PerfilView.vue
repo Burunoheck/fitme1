@@ -3,11 +3,11 @@
     <v-app>
       <v-app-bar app color="#0C0B30" class="cabecalho" dark elevation="3">
         <v-list-item>
-          <h3>Fitme</h3>
+          <h1>Fitme</h1>
         </v-list-item>
         <v-list-item-group class="d-flex">
           <v-list-item>
-            <v-icon x-large class="mr-4" name="usuario">mdi-account-circle Nome_Usuário</v-icon>
+            <v-icon size="35" class="mr-4" name="usuario">mdi-account-circle Nome_Usuário</v-icon>
             <label for="usuario" class="cursor-pointer">Nome_Usuário</label>
           </v-list-item>
           <v-list-item @click="sair">Sair</v-list-item>
@@ -16,11 +16,15 @@
     </v-app>
     <v-container>
     <v-col cols="12">
-      <h1 class="h1 mb-8 ml-15">Nome do Usuário</h1>
+      <h1 class="h1 mb-8 d-flex justify-center">Nome do Usuário</h1>
+      <v-icon dark size="300" class="d-flex justify-center" name="usuario">mdi-account-circle Nome_Usuário</v-icon>
+      <v-divider dark></v-divider>
+      <v-divider dark></v-divider>
+      <v-divider dark class="mb-5"></v-divider>
     <v-form>
       <v-container>
         <v-text-field
-        background-color="white"
+            background-color="white"
             label="Nome"
             placeholder="Nome"
             filled
@@ -29,7 +33,7 @@
             width="50%"
           ></v-text-field>
           <v-text-field
-          background-color="white"    
+            background-color="white"    
             label="Sobrenome"
             placeholder="Sobrenome"
             filled
@@ -37,21 +41,25 @@
             dense
           ></v-text-field>
           <v-text-field
-          background-color="white"
+            background-color="white"
             label="E-mail"
             placeholder="usuario@gmail.com"
             filled
             rounded
             dense
           ></v-text-field>
-          <v-text-field
-          background-color="white"
-            label="Senha"
+          <v-text-field 
             placeholder="Senha"
+            background-color="white"
+            label="Senha"
             filled
             rounded
             dense
-          ></v-text-field>
+            :rules="rules"
+            :type="show ? 'text' : 'password'"
+            :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'" 
+            @click:append="show = !show">
+          </v-text-field>
           <v-text-field
             background-color="white"
             label="Data de Nascimento"
@@ -85,6 +93,8 @@ export default {
     return{
       nome: "",
       sobrenome: "",
+      user:{},
+      show: false,
     }
   },
   methods: {
@@ -104,5 +114,16 @@ h1{
 }
 .cursor-pointer{
   cursor: pointer;
+}
+body::-webkit-scrollbar {
+  width: 5px;              
+}
+body::-webkit-scrollbar-track {
+  background: rgb(163, 206, 209);        
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.473);   
+  border-radius: 200px;   
+  border: 1px solid rgb(163, 206, 209);   
 }
 </style>

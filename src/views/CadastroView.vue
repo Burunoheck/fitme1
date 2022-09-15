@@ -1,5 +1,5 @@
 <template>
-  <v-img max-height="100%" max-width="100%" src="@/assets/images/exercicio-fisico-metabolismo.jpg">
+  <v-img app max-height="100vh" max-width="100vw" src="@/assets/images/exercicio-fisico-metabolismo.jpg">
   <v-container class="d-flex justify-start" fill-height fluid text-center>
     <v-col md="4">
       <v-container class="white rounded-lg">
