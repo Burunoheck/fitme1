@@ -7,12 +7,17 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: () => import('@/layouts/DefaultView'),
+    component: () => import('@/layouts/BlankView'),
     children: [
       {
-        path: '/',
-        name: 'home',
-        component: HomeView
+      path: '/',
+      name: 'LoginView',
+      component: () => import(/* webpackChunkName: "login" */ '../views/LoginView.vue')
+      },
+      {
+        path: '/cadastro',
+        name: 'CadastroView',
+        component: () => import(/* webpackChunkName: "cadastro" */ '../views/CadastroView.vue')
       },
       {
         path: '/perfil',
@@ -23,13 +28,13 @@ const routes = [
   },
   {
     path: '/',
-    component: () => import('@/layouts/BlankView'),
+    component: () => import('@/layouts/DefaultView'),
     children: [
       {
-      path: '/login',
-      name: 'LoginView',
-      component: () => import(/* webpackChunkName: "login" */ '../views/LoginView.vue')
-      }
+        path: '/home',
+        name: 'HomeView',
+        component: HomeView
+      },
     ]
   }
 ]

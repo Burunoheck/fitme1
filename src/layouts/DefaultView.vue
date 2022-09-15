@@ -37,7 +37,6 @@
       </v-navigation-drawer>
       <v-main>
         <router-view></router-view>
-        V/MAIN
       </v-main>
       <v-footer app class="py-3">
         <span class="caption"> Fitme &copy; 2022 </span>
@@ -55,7 +54,7 @@
           {
             title: "Home",
             icon: "mdi-account",
-            to: "/",
+            to: "/home",
           },
           {
             title: "Perfil",
@@ -65,7 +64,7 @@
           {
             title: "Sair",
             icon: "mdi-exit-to-app",
-            to: "/login",
+            to: "/",
           },
         ],
       };
