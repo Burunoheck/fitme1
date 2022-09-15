@@ -1,15 +1,17 @@
 <template>
   <v-container class="fundo d-flex" fluid>
     <v-app>
-      <v-app-bar app color="#0C0B30" class="cabecalho d-flex justify-space-between" dark elevation="3">
+      <v-app-bar app color="#0C0B30" class="cabecalho" dark elevation="3">
         <v-list-item>
           <h3>Fitme</h3>
         </v-list-item>
-        <v-list-item>
-          <v-icon x-large class="mr-4">mdi-account-circle</v-icon>
-          <v-text>Nome_Usuário |</v-text>
-          <v-text>Sair</v-text>
-        </v-list-item>
+        <v-list-item-group class="d-flex">
+          <v-list-item>
+            <v-icon x-large class="mr-4" name="usuario">mdi-account-circle Nome_Usuário</v-icon>
+            <label for="usuario" class="cursor-pointer">Nome_Usuário</label>
+          </v-list-item>
+          <v-list-item @click="sair">Sair</v-list-item>
+        </v-list-item-group>
       </v-app-bar>
     </v-app>
     <v-container>
@@ -27,7 +29,7 @@
             width="50%"
           ></v-text-field>
           <v-text-field
-          background-color="white"      
+          background-color="white"    
             label="Sobrenome"
             placeholder="Sobrenome"
             filled
@@ -37,7 +39,7 @@
           <v-text-field
           background-color="white"
             label="E-mail"
-            placeholder="E-mail"
+            placeholder="usuario@gmail.com"
             filled
             rounded
             dense
@@ -53,7 +55,7 @@
           <v-text-field
             background-color="white"
             label="Data de Nascimento"
-            placeholder="Data de Nascimento"
+            placeholder="DD/MM/AA"
             filled
             rounded
             dense
@@ -84,7 +86,12 @@ export default {
       nome: "",
       sobrenome: "",
     }
-  }
+  },
+  methods: {
+    sair(){
+      this.$router.push({ name: "LoginView" });
+    }
+  },
 };
 </script>
 
@@ -94,5 +101,8 @@ export default {
 }
 h1{
   color: white;
+}
+.cursor-pointer{
+  cursor: pointer;
 }
 </style>

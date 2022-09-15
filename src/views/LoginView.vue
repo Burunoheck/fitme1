@@ -14,7 +14,7 @@
               <v-text-field outlined label="Nome de Usuário" placeholder="Nome" v-model="user.nome" ></v-text-field>
               <v-text-field outlined label="Senha"
                 placeholder="Senha"
-                v-model="user.password"
+                v-model="user.senha"
                 :type="show ? 'text' : 'password'"
                 :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'" 
                 @click:append="show = !show">
@@ -42,10 +42,6 @@
         </v-row>
     </v-container>
     </v-col>
-      
-    <v-snackbar color="red" v-model="errorLogin" danger multiline timeout="2000">
-      Usuário ou senha inválidos
-    </v-snackbar>
   </v-container>
   </v-img>
 </template>
@@ -63,7 +59,7 @@
         this.user = {};
       },
       login() {
-        if (this.user.nome === 'bruno' && this.user.password === 'bruno') {
+        if (this.user.nome === 'bruno' && this.user.senha === 'bruno') {
           this.$router.push({ name: "PerfilView" });
         } else {
           this.errorLogin = true;
