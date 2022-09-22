@@ -12,7 +12,7 @@
     <v-list>
       <v-list-item-group>
         <v-list-item v-for="tarefa of tarefas" :key="tarefa.titulo">
-        {{ tarefa.titulo }}
+          {{ tarefa.titulo }}
         </v-list-item>
       </v-list-item-group>
     </v-list>
@@ -22,19 +22,19 @@
 <script>
 export default {
   data() {
-    return{
+    return {
       novaTarefa: "",
       tarefas: [
-        {titulo: "Tarefa 1"},
-        {titulo: "Tarefa 2"},
-        {titulo: "Tarefa 3"},
+        { titulo: "Tarefa 1" },
+        { titulo: "Tarefa 2" },
+        { titulo: "Tarefa 3" },
       ],
     };
   },
   methods: {
     adicionar(e) {
       e.preventDefault();
-      this.tarefas.push({titulo: this.novaTarefa})
+      this.tarefas.push({ titulo: this.novaTarefa })
       this.novaTarefa = "";
     }
   }

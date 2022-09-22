@@ -1,76 +1,67 @@
 <template>
+  <v-container class="fundo d-flex teste" fluid>
     <v-app>
-      <v-app-bar app color="primary" dark elevation="3">
-        <v-app-bar-nav-icon @click.stop="sidebar = !sidebar"></v-app-bar-nav-icon>
+      <v-app-bar app color="#0C0B30" class="cabecalho" dark elevation="3">
         <v-list-item>
-          <h3>Fitme</h3>
+          <h1>Fitme</h1>
         </v-list-item>
-        <v-spacer></v-spacer>
-        <v-icon>mdi-account</v-icon>
-      </v-app-bar>
-      <v-navigation-drawer app v-model="sidebar" :mini-variant.sync="mini">
-        <v-list dense color="primary" dark>
+        <v-list-item-group class="d-flex">
           <v-list-item>
-            <v-list-item-action>
-              <v-icon @click.stop="sidebar = !sidebar"> mdi-chevron-left </v-icon>
-            </v-list-item-action>
+            <v-icon size="35" class="mr-4" name="usuario">mdi-account-circle Nome_Usuário</v-icon>
+            <label for="usuario" class="cursor-pointer">Nome_Usuário</label>
           </v-list-item>
-        </v-list>
-        <v-list-item class="px=2" @click="mini = !mini">
-          <v-list-item-avatar>
-            <v-icon> mdi-account </v-icon>
-          </v-list-item-avatar>
-          <v-list-item-content> Lucas Reeck de Eusebio </v-list-item-content>
-          <v-btn icon small>
-            <v-icon> mdi-chevron-left </v-icon>
-          </v-btn>
-        </v-list-item>
-        <v-divider> </v-divider>
-        <v-list>
-          <v-list-item v-for="item of items" :key="item.title" link :to="item.to">
-            <v-list-item-icon>
-              <v-icon> {{ item.icon }} </v-icon>
-            </v-list-item-icon>
-            <v-list-item-content> {{ item.title }} </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </v-navigation-drawer>
-      <v-main>
-        <router-view></router-view>
-      </v-main>
-      <v-footer app class="py-3">
-        <span class="caption"> Fitme &copy; 2022 </span>
-      </v-footer>
+          <v-list-item @click="sair">Sair</v-list-item>
+        </v-list-item-group>
+      </v-app-bar>
     </v-app>
-  </template>
+  </v-container>
+</template>
   
-  <script>
-  export default {
-    data() {
-      return {
-        sidebar: true,
-        mini: false,
-        items: [
-          {
-            title: "Home",
-            icon: "mdi-account",
-            to: "/home",
-          },
-          {
-            title: "Perfil",
-            icon: "mdi-account-cog",
-            to: "/perfil",
-          },
-          {
-            title: "Sair",
-            icon: "mdi-exit-to-app",
-            to: "/",
-          },
-        ],
-      };
-    },
-  };
-  </script>
+<script>
+export default {
+  data() {
+    return {
+      sidebar: true,
+      mini: false,
+      items: [
+        {
+          title: "Home",
+          icon: "mdi-account",
+          to: "/home",
+        },
+        {
+          title: "Perfil",
+          icon: "mdi-account-cog",
+          to: "/perfil",
+        },
+        {
+          title: "Sair",
+          icon: "mdi-exit-to-app",
+          to: "/",
+        },
+      ],
+    };
+  },
+};
+</script>
   
-  <style></style>
+<style>
+html {
+  overflow-y: hidden;
+
+}
+
+.fundo {
+  background-color: #083C89;
+  width: 100%;
+  max-height: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.teste {
+  overflow-y: hidden;
+}
+</style>
   

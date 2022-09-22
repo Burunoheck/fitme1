@@ -15,74 +15,40 @@
       </v-app-bar>
     </v-app>
     <v-container>
-    <v-col cols="12">
-      <h1 class="h1 d-flex justify-center">Nome do Usuário</h1>
-      <v-icon dark size="300" class="d-flex justify-center" name="usuario">mdi-account-circle Nome_Usuário</v-icon>
-      <v-divider dark></v-divider>
-      <v-divider dark></v-divider>
-      <v-divider dark class="mb-5"></v-divider>
-    <v-form>
-      <v-container>
-        <v-text-field
-            background-color="white"
-            label="Nome"
-            placeholder="Nome"
-            filled
-            rounded
-            dense
-            width="50%"
-          ></v-text-field>
-          <v-text-field
-            background-color="white"    
-            label="Sobrenome"
-            placeholder="Sobrenome"
-            filled
-            rounded
-            dense
-          ></v-text-field>
-          <v-text-field
-            background-color="white"
-            label="E-mail"
-            placeholder="usuario@gmail.com"
-            filled
-            rounded
-            dense
-          ></v-text-field>
-          <v-text-field 
-            placeholder="Senha"
-            background-color="white"
-            label="Senha"
-            filled
-            rounded
-            dense
-            :rules="rules"
-            :type="show ? 'text' : 'password'"
-            :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'" 
-            @click:append="show = !show">
-          </v-text-field>
-          <v-text-field
-            background-color="white"
-            label="Data de Nascimento"
-            placeholder="DD/MM/AA"
-            filled
-            rounded
-            dense
-          ></v-text-field>
-        <v-btn color="#083C89" dark width="100%">
-          salvar alterações
-        </v-btn>
-      </v-container>
-    </v-form>
-  </v-col>
-</v-container>
+      <v-col cols="12">
+        <h1 class="h1 d-flex justify-center">Nome do Usuário</h1>
+        <v-icon dark size="300" class="d-flex justify-center" name="usuario">mdi-account-circle Nome_Usuário</v-icon>
+        <v-divider dark></v-divider>
+        <v-divider dark></v-divider>
+        <v-divider dark class="mb-5"></v-divider>
+        <v-form>
+          <v-container>
+            <v-text-field background-color="white" label="Nome" placeholder="Nome" filled rounded dense width="50%">
+            </v-text-field>
+            <v-text-field background-color="white" label="Sobrenome" placeholder="Sobrenome" filled rounded dense>
+            </v-text-field>
+            <v-text-field background-color="white" label="E-mail" placeholder="usuario@gmail.com" filled rounded dense>
+            </v-text-field>
+            <v-text-field placeholder="Senha" background-color="white" label="Senha" filled rounded dense :rules="rules"
+              :type="show ? 'text' : 'password'" :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+              @click:append="show = !show">
+            </v-text-field>
+            <v-text-field background-color="white" label="Data de Nascimento" placeholder="DD/MM/AA" filled rounded
+              dense></v-text-field>
+            <v-btn color="#083C89" dark width="100%">
+              salvar alterações
+            </v-btn>
+          </v-container>
+        </v-form>
+      </v-col>
+    </v-container>
     <v-col cols="8" class="ml-10">
       <v-row class="d-flex justify-center">
         <h1 class="h1">
           Progresso Semanal
         </h1>
       </v-row>
-      <v-img src="@/assets/images/0xcexG1C9BroKmojA.png"
-      class="mt-15"></v-img>
+      <v-img src="@/assets/images/0xcexG1C9BroKmojA.png" class="mt-15"></v-img>
     </v-col>
   </v-container>
 </template>
@@ -90,15 +56,15 @@
 <script>
 export default {
   data() {
-    return{
+    return {
       nome: "",
       sobrenome: "",
-      user:{},
+      user: {},
       show: false,
     }
   },
   methods: {
-    sair(){
+    sair() {
       this.$router.push({ name: "LoginView" });
     }
   },
@@ -106,24 +72,29 @@ export default {
 </script>
 
 <style>
-.fundo{
+.fundo {
   background-color: #083C89;
 }
-h1{
+
+h1 {
   color: white;
 }
-.cursor-pointer{
+
+.cursor-pointer {
   cursor: pointer;
 }
+
 body::-webkit-scrollbar {
-  width: 5px;              
+  width: 5px;
 }
+
 body::-webkit-scrollbar-track {
-  background: rgb(163, 206, 209);        
+  background: rgb(163, 206, 209);
 }
+
 body::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.473);   
-  border-radius: 200px;   
-  border: 1px solid rgb(163, 206, 209);   
+  background-color: rgba(0, 0, 0, 0.473);
+  border-radius: 200px;
+  border: 1px solid rgb(163, 206, 209);
 }
 </style>
