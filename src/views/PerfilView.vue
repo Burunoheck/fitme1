@@ -7,7 +7,9 @@
         </v-list-item>
         <v-list-item-group class="d-flex">
           <v-list-item>
-            <v-icon size="35" class="mr-4" name="usuario">mdi-account-circle Nome_Usuário</v-icon>
+            <v-icon size="35" class="mr-4" name="usuario"
+              >mdi-account-circle Nome_Usuário</v-icon
+            >
             <label for="usuario" class="cursor-pointer">Nome_Usuário</label>
           </v-list-item>
           <v-list-item @click="sair">Sair</v-list-item>
@@ -17,36 +19,71 @@
     <v-container>
       <v-col cols="12">
         <h1 class="h1 d-flex justify-center">Nome do Usuário</h1>
-        <v-icon dark size="300" class="d-flex justify-center" name="usuario">mdi-account-circle Nome_Usuário</v-icon>
+        <v-icon dark size="300" class="d-flex justify-center" name="usuario"
+          >mdi-account-circle Nome_Usuário</v-icon
+        >
         <v-divider dark></v-divider>
         <v-divider dark></v-divider>
         <v-divider dark class="mb-5"></v-divider>
         <v-form>
           <v-container>
-            <v-text-field background-color="white" label="Nome" placeholder="Nome" filled rounded dense width="50%">
+            <v-text-field
+              background-color="white"
+              label="Nome"
+              placeholder="Nome"
+              filled
+              rounded
+              dense
+              width="50%"
+            >
             </v-text-field>
-            <v-text-field background-color="white" label="Sobrenome" placeholder="Sobrenome" filled rounded dense>
+            <v-text-field
+              background-color="white"
+              label="Sobrenome"
+              placeholder="Sobrenome"
+              filled
+              rounded
+              dense
+            >
             </v-text-field>
-            <v-text-field background-color="white" label="E-mail" placeholder="usuario@gmail.com" filled rounded dense>
+            <v-text-field
+              background-color="white"
+              label="E-mail"
+              placeholder="usuario@gmail.com"
+              filled
+              rounded
+              dense
+            >
             </v-text-field>
-            <v-text-field placeholder="Senha" background-color="white" label="Senha" filled rounded dense :rules="rules"
-              :type="show ? 'text' : 'password'" :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-              @click:append="show = !show">
+            <v-text-field
+              placeholder="Senha"
+              background-color="white"
+              label="Senha"
+              filled
+              rounded
+              dense
+              :rules="rules"
+              :type="show ? 'text' : 'password'"
+              :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+              @click:append="show = !show"
+            >
             </v-text-field>
-            <v-text-field background-color="white" label="Data de Nascimento" placeholder="DD/MM/AA" filled rounded
-              dense></v-text-field>
-            <v-btn color="#083C89" dark width="100%">
-              salvar alterações
-            </v-btn>
+            <v-text-field
+              background-color="white"
+              label="Data de Nascimento"
+              placeholder="DD/MM/AA"
+              filled
+              rounded
+              dense
+            ></v-text-field>
+            <v-btn color="#083C89" dark width="100%"> salvar alterações </v-btn>
           </v-container>
         </v-form>
       </v-col>
     </v-container>
     <v-col cols="8" class="ml-10">
       <v-row class="d-flex justify-center">
-        <h1 class="h1">
-          Progresso Semanal
-        </h1>
+        <h1 class="h1">Progresso Semanal</h1>
       </v-row>
       <v-img src="@/assets/images/0xcexG1C9BroKmojA.png" class="mt-15"></v-img>
     </v-col>
@@ -61,19 +98,19 @@ export default {
       sobrenome: "",
       user: {},
       show: false,
-    }
+    };
   },
   methods: {
     sair() {
       this.$router.push({ name: "LoginView" });
-    }
+    },
   },
 };
 </script>
 
 <style>
 .fundo {
-  background-color: #083C89;
+  background-color: #083c89;
 }
 
 h1 {

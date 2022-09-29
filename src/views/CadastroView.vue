@@ -1,5 +1,10 @@
 <template>
-  <v-img app max-height="100vh" max-width="100vw" src="@/assets/images/exercicio-fisico-metabolismo.jpg">
+  <v-img
+    app
+    max-height="100vh"
+    max-width="100vw"
+    src="@/assets/images/exercicio-fisico-metabolismo.jpg"
+  >
     <v-container class="d-flex justify-start" fill-height fluid text-center>
       <v-col md="4">
         <v-container class="white rounded-lg">
@@ -15,19 +20,51 @@
           <v-row class="elavation-3 mx-auto">
             <v-col>
               <v-form>
-                <v-text-field outlined label="Nome" placeholder="Nome" :rules="rules"></v-text-field>
-                <v-text-field outlined label="Sobrenome" placeholder="Sobrenome"></v-text-field>
-                <v-text-field outlined label="E-mail" placeholder="usuario@gmail.com" :rules="rules"></v-text-field>
-                <v-text-field outlined label="Senha" placeholder="Senha" :rules="rules"
-                  :type="show ? 'text' : 'password'" :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-                  @click:append="show = !show">
+                <v-text-field
+                  outlined
+                  label="Nome"
+                  placeholder="Nome"
+                  :rules="rules"
+                ></v-text-field>
+                <v-text-field
+                  outlined
+                  label="Sobrenome"
+                  placeholder="Sobrenome"
+                ></v-text-field>
+                <v-text-field
+                  outlined
+                  label="E-mail"
+                  placeholder="usuario@gmail.com"
+                  :rules="rules"
+                ></v-text-field>
+                <v-text-field
+                  outlined
+                  label="Senha"
+                  placeholder="Senha"
+                  :rules="rules"
+                  :type="show ? 'text' : 'password'"
+                  :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+                  @click:append="show = !show"
+                >
                 </v-text-field>
                 <v-divider></v-divider>
                 <v-divider></v-divider>
                 <v-divider class="mb-8"></v-divider>
-                <v-btn class="mb-4" dark color="#4A3CA5" @click="cadastrar" width="95%" height="50px">Cadastrar</v-btn>
-                <v-text class="text--disabled cursor-pointer" font-family="arial" @click="voltarLogin">Voltar para o
-                  login</v-text>
+                <v-btn
+                  class="mb-4"
+                  dark
+                  color="#4A3CA5"
+                  @click="cadastrar"
+                  width="95%"
+                  height="50px"
+                  >Cadastrar</v-btn
+                >
+                <v-text
+                  class="text--disabled cursor-pointer"
+                  font-family="arial"
+                  @click="voltarLogin"
+                  >Voltar para o login</v-text
+                >
               </v-form>
             </v-col>
           </v-row>
@@ -43,9 +80,7 @@ export default {
     return {
       user: {},
       show: false,
-      rules: [
-        value => !!value || 'Campo obrigatório*',
-      ],
+      rules: [(value) => !!value || "Campo obrigatório*"],
     };
   },
   methods: {
@@ -57,18 +92,18 @@ export default {
     },
     cadastrar() {
       this.$router.push({ name: "PerfilView" });
-    }
+    },
   },
 };
 </script>
 
 <style>
 html {
-  overflow-y: hidden
+  overflow-y: hidden;
 }
 
 .login {
-  color: #4A3CA5;
+  color: #4a3ca5;
 }
 
 .cursor-pointer {

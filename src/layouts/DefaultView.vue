@@ -1,19 +1,70 @@
 <template>
-  <v-container class="fundo d-flex teste" fluid>
+  <v-container class="fundo d-flex" fluid>
     <v-app>
       <v-app-bar app color="#0C0B30" class="cabecalho" dark elevation="3">
         <v-list-item>
           <h1>Fitme</h1>
         </v-list-item>
-        <v-list-item-group class="d-flex">
+        <v-list-item-group class="menu d-flex">
+          <v-divider vertical></v-divider>
           <v-list-item>
-            <v-icon size="35" class="mr-4" name="usuario">mdi-account-circle Nome_Usuário</v-icon>
-            <label for="usuario" class="cursor-pointer">Nome_Usuário</label>
+            <label for="usuario" class="cursor-pointer"> Treino </label>
+          </v-list-item>
+          <v-divider vertical></v-divider>
+          <v-list-item>
+            <label for="usuario" class="cursor-pointer">Exercício</label>
+          </v-list-item>
+          <v-divider vertical></v-divider>
+          <v-list-item>
+            <label for="usuario" class="cursor-pointer">Alimentação</label>
+          </v-list-item>
+          <v-divider vertical></v-divider>
+          <v-list-item>
+            <v-icon size="35" class="mr-4" name="usuario"
+              >mdi-account-circle Nome_Usuário</v-icon
+            >
+            <label for="usuario" class="cursor-pointer">Perfil</label>
           </v-list-item>
           <v-list-item @click="sair">Sair</v-list-item>
         </v-list-item-group>
       </v-app-bar>
+
+      <v-navigation-drawer
+        color="#052d69"
+        class="mt-14 accent-4"
+        dark
+        permanent
+      >
+        <v-list>
+          <v-list-item v-for="item in items" :key="item.title" link>
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+
+        <template #append>
+          <div class="pa-2">
+            <v-btn block color="#0C0C1F"> Logout </v-btn>
+          </div>
+        </template>
+      </v-navigation-drawer>
+
+      <!-- <template>
+        <v-app-bar width="10vw" color="#052d69" lights-out dark prominent>
+          <v-toolbar-title></v-toolbar-title>
+
+          <v-spacer></v-spacer>
+        </v-app-bar>
+      </template> -->
     </v-app>
+    <!-- <v-main id="main">
+      <router-view></router-view>
+    </v-main> -->
   </v-container>
 </template>
   
@@ -47,21 +98,22 @@ export default {
   
 <style>
 html {
+  margin: 0;
   overflow-y: hidden;
-
 }
 
 .fundo {
-  background-color: #083C89;
-  width: 100%;
-  max-height: 100%;
-  height: 100%;
   padding: 0;
-  margin: 0;
+  overflow-y: hidden;
+  background-color: #083c89;
 }
 
-.teste {
-  overflow-y: hidden;
+.menu {
+  font-size: 20px;
+}
+
+#main {
+  color: #fff;
 }
 </style>
   

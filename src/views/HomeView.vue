@@ -1,10 +1,13 @@
 <template>
   <v-container class="pa-8" fluid>
-    <h1 class="h1">
-      Fitme
-    </h1>
+    <h1 class="h1">Fitme</h1>
     <v-form>
-      <v-text-field label="Nova tarefa" v-model="novaTarefa" @keydown.enter="adicionar">
+      <v-text-field
+        color="white"
+        label="Nova tarefa"
+        v-model="novaTarefa"
+        @keydown.enter="adicionar"
+      >
         <v-icon slot="append" @click="adicionar">mdi-send</v-icon>
       </v-text-field>
     </v-form>
@@ -34,13 +37,12 @@ export default {
   methods: {
     adicionar(e) {
       e.preventDefault();
-      this.tarefas.push({ titulo: this.novaTarefa })
+      this.tarefas.push({ titulo: this.novaTarefa });
       this.novaTarefa = "";
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style>
-
 </style>
