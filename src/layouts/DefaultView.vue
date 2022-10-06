@@ -35,6 +35,23 @@
         dark
         permanent
       >
+        <v-list-item-content>
+          <v-list-item-title class="text-h4 font-weight-black mt-3 ml-4">
+            Início
+          </v-list-item-title>
+          <v-divider></v-divider>
+        </v-list-item-content>
+        <template>
+          <v-list-item-content>
+            <v-toolbar dense floating>
+              <v-text-field
+                hide-details
+                prepend-icon="mdi-magnify"
+                single-line
+              ></v-text-field>
+            </v-toolbar>
+          </v-list-item-content>
+        </template>
         <v-list>
           <v-list-item v-for="item in items" :key="item.title" link>
             <v-list-item-icon>
@@ -67,7 +84,7 @@
     </v-main> -->
   </v-container>
 </template>
-  
+
 <script>
 export default {
   data() {
@@ -95,7 +112,7 @@ export default {
   },
 };
 </script>
-  
+
 <style>
 html {
   margin: 0;
@@ -116,4 +133,3 @@ html {
   color: #fff;
 }
 </style>
-  
