@@ -29,25 +29,24 @@
         </v-list-item-group>
       </v-app-bar>
 
-      <v-navigation-drawer
-        color="#052d69"
-        class="mt-14 accent-4"
-        dark
-        permanent
-      >
+      <v-navigation-drawer color="#052d69" class="mt-14 accent-4" permanent>
         <v-list-item-content>
-          <v-list-item-title class="text-h4 font-weight-black mt-3 ml-4">
+          <v-list-item-title
+            class="text-h4 font-weight-black mt-3 ml-4"
+            style="color: white"
+          >
             Início
           </v-list-item-title>
           <v-divider></v-divider>
         </v-list-item-content>
         <template>
           <v-list-item-content>
-            <v-toolbar dense floating>
+            <v-toolbar dense floating elevation="3" class="ml-3 mr-3">
               <v-text-field
                 hide-details
                 prepend-icon="mdi-magnify"
                 single-line
+                class="ml-1 mr-1"
               ></v-text-field>
             </v-toolbar>
           </v-list-item-content>
@@ -81,7 +80,7 @@
     </v-app>
     <!-- <v-main id="main">
       <router-view></router-view>
-    </v-main> -->
+    </v-main>  -->
   </v-container>
 </template>
 

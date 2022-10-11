@@ -35,6 +35,11 @@ const routes = [
         name: 'HomeView',
         component: HomeView
       },
+      {
+        path: '/basal',
+        name: 'TaxaBasal',
+        component: () => import(/* webpackChunkName: "basal" */ '../views/TaxaBasal.vue')
+      },
     ]
   }
 ]
