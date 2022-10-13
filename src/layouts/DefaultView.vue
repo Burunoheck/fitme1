@@ -25,7 +25,7 @@
             >
             <label for="usuario" class="cursor-pointer">Perfil</label>
           </v-list-item>
-          <v-list-item @click="sair">Sair</v-list-item>
+          <v-list-item @click="sair()">Sair</v-list-item>
         </v-list-item-group>
       </v-app-bar>
 
@@ -78,9 +78,9 @@
         </v-app-bar>
       </template> -->
     </v-app>
-    <!-- <v-main id="main">
+    <v-main>
       <router-view></router-view>
-    </v-main>  -->
+    </v-main>
   </v-container>
 </template>
 
@@ -109,6 +109,11 @@ export default {
       ],
     };
   },
+  methods: {
+    sair() {
+      console.log("Saiu");
+    },
+  },
 };
 </script>
 
@@ -126,9 +131,5 @@ html {
 
 .menu {
   font-size: 20px;
-}
-
-#main {
-  color: #fff;
 }
 </style>
