@@ -39,6 +39,7 @@
           @keydown.enter="adicion"
         >
         </v-text-field>
+        <el-skeleton :rows="5" />
       </v-col>
     <v-btn id="corzinha" style="color: gray">
       <h3>Calcular</h3>
@@ -48,6 +49,7 @@
       </v-container>
       <!-- </v-row> -->
     </v-form>
+    
   </v-container>
 </template>
   
