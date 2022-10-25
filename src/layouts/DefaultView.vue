@@ -47,27 +47,28 @@
                 prepend-icon="mdi-magnify"
                 single-line
                 class="ml-1 mr-1"
+                label="Procurar"
               ></v-text-field>
             </v-toolbar>
           </v-list-item-content>
         </template>
-        <v-list>
-          <v-list-item v-for="item in items" :key="item.title" link>
-            <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-icon>
+            <!-- <v-list>
+              <v-list-item v-for="item in items" :key="item.title" link>
+                <v-list-item-icon>
+                  <v-icon>{{ item.icon }}</v-icon>
+                </v-list-item-icon>
 
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
+                <v-list-item-content>
+                  <v-list-item-title>{{ item.title }}</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list> -->
 
-        <template #append>
+        <!-- <template #append>
           <div class="pa-2">
             <v-btn block color="#0C0C1F"> Logout </v-btn>
           </div>
-        </template>
+        </template> -->
       </v-navigation-drawer>
 
       <!-- <template>
