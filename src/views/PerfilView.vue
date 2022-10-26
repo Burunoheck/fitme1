@@ -38,48 +38,76 @@
             >
             </v-text-field>
             <v-text-field
-              background-color="white"
-              label="Sobrenome"
-              placeholder="Sobrenome"
-              filled
-              rounded
-              dense
+            background-color="white"
+            label="E-mail"
+            placeholder="usuario@gmail.com"
+            filled
+            rounded
+            dense
             >
-            </v-text-field>
-            <v-text-field
-              background-color="white"
-              label="E-mail"
-              placeholder="usuario@gmail.com"
-              filled
-              rounded
-              dense
+          </v-text-field>
+          <v-text-field
+          placeholder="Senha"
+          background-color="white"
+          label="Senha"
+          filled
+          rounded
+          dense
+          :rules="rules"
+          :type="show ? 'text' : 'password'"
+          :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+          @click:append="show = !show"
+          >
+        </v-text-field>
+        <v-text-field
+          background-color="white"
+          label="Sexo"
+          placeholder="Sexo"
+          filled
+          rounded
+          dense
+        >
+        </v-text-field>
+          <v-col
+            cols="12"
+            sm="6"
+            md="4"
+          >
+            <v-menu
+              ref="menu"
+              v-model="menu"
+              :close-on-content-click="false"
+              :return-value.sync="date"
+              transition="scale-transition"
+              offset-y
+              min-width="auto"
             >
-            </v-text-field>
-            <v-text-field
-              placeholder="Senha"
-              background-color="white"
-              label="Senha"
-              filled
-              rounded
-              dense
-              :rules="rules"
-              :type="show ? 'text' : 'password'"
-              :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
-              @click:append="show = !show"
-            >
-            </v-text-field>
-            <v-text-field
-              background-color="white"
-              label="Data de Nascimento"
-              placeholder="DD/MM/AA"
-              filled
-              rounded
-              dense
-            ></v-text-field>
-            <v-btn color="#083C89" dark width="100%"> salvar alterações </v-btn>
-          </v-container>
-        </v-form>
-      </v-col>
+              <template v-slot:activator="{ on, attrs }">
+                <v-text-field
+                  v-model="date"
+                  label="Picker in menu"
+                  prepend-icon="mdi-calendar"
+                  readonly
+                  v-bind="attrs"
+                  v-on="on"
+                  background-color="white"
+                  filled
+                  rounded
+                  dense
+                ></v-text-field>
+              </template>
+              <v-date-picker
+                v-model="date"
+                no-title
+                scrollable
+              >
+              </v-date-picker>
+            </v-menu>
+          </v-col>
+        <v-btn color="#083C89" dark width="100%"> salvar alterações </v-btn>
+       </v-container>
+      </v-form>
+     </v-col>
     </v-container>
     <v-col cols="8" class="ml-10">
       <v-row class="d-flex justify-center">
