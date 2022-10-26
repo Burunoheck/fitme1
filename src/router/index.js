@@ -36,9 +36,9 @@ const routes = [
         component: HomeView
       },
       {
-        path: '/basal',
-        name: 'TaxaBasal',
-        component: () => import(/* webpackChunkName: "basal" */ '../views/TaxaBasal.vue')
+        path: '/imc',
+        name: 'CalculoImc',
+        component: () => import(/* webpackChunkName: "imc" */ '../views/CalculoImc.vue')
       },
     ]
   }

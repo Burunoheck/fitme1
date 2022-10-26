@@ -1,8 +1,6 @@
 <template>
   <v-container class="pa-8" fluid>
-    <h1 class="h1 pa-8" style="color: white">
-      Calculadora de Taxa Metabólica Basal
-    </h1>
+    <h1 class="h1 pa-8" style="color: white">Calculadora de IMC</h1>
     <v-form id="formulario">
       <!-- <v-row> -->
       <v-container class="pl-8">
@@ -20,15 +18,23 @@
           </v-text-field>
         </v-col>
         <v-col cols="12" sm="6" md="3">
-          <v-text-field outlined dark label="Idade(anos)" type="number">
-          </v-text-field>
+          <v-text-field 
+            outlined
+            cols="12"
+            sm="6"
+            md="3"
+            dark
+            label="Altura(centímetros)"
+            for="centimetros"
+            type="number"
+          ></v-text-field>
         </v-col>
         <v-col cols="12" sm="6" md="3">
           <v-text-field
             outlined
             dark
-            label="Altura(centímetros)"
-            for="altura"
+            label="Metros"
+            for="metros"
             type="number"
           >
           </v-text-field>
@@ -54,10 +60,13 @@ export default {
   },
   methods: {
     calcular() {
-      var altura = this.altura;
-      var kilos = this.kilos;
+      var formulario = document.getElementById("formulario");
+      var kilos = +formulario.kilos.value;
+      var metros = +formulario.metros.value;
+      var centimetros = +formulario.centimetros.value;
+      var altura = (metros * 100 + centimetros) / 100;
       var imc = kilos / (altura * altura);
-
+      formulario.imc.value = imc.toFixed(2);
       if (imc < 20) {
         alert("Você esta abaixo do peso!");
       } else if (imc > 20 && imc <= 25) {
