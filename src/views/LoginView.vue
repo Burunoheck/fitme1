@@ -19,13 +19,13 @@
                   outlined
                   label="Nome de Usuário"
                   placeholder="Nome"
-                  v-model="user.nome"
+                  v-model="usuario.username"
                 ></v-text-field>
                 <v-text-field
                   outlined
                   label="Senha"
                   placeholder="Senha"
-                  v-model="user.senha"
+                  v-model="usuario.password"
                   :type="show ? 'text' : 'password'"
                   :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
                   @click:append="show = !show"
@@ -35,7 +35,7 @@
                   class="mx-2"
                   dark
                   color="#4A3CA5"
-                  @click="login"
+                  @click="submitLogin"
                   width="95%"
                   height="50px"
                   >Login</v-btn
@@ -76,29 +76,35 @@
 </template>
 
 <script>
+import{ mapActions} from 'vuex'
 export default {
+  meta: {
+    auth: false
+  },
   data() {
     return {
-      user: {},
+      usuario: {},
       show: false,
     };
   },
   methods: {
     reset() {
-      this.user = {};
+      this.usuario = {};
     },
-    login() {
-      if (this.user.nome === "bruno" && this.user.senha === "bruno") {
-        this.$router.push({ name: "PerfilView" });
-      } else {
-        this.errorLogin = true;
-      }
-    },
-    criarConta() {
-      this.$router.push({ name: "CadastroView" });
-    },
+    ...mapActions('auth', ['login', 'logout']),
+     async submitLogin() {
+      try{
+          await this.login(this.usuario)
+          this.$router.push({ name: 'PerfilView'})
+      } catch(e) {
+        this.loginText='Falha'
+    }
   },
-};
+    criarConta() {
+    this.$router.push({ name: "CadastroView" });
+    }
+  },
+}
 </script>
 
 <style>

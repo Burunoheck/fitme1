@@ -12,7 +12,7 @@
             >
             <label for="usuario" class="cursor-pointer">Nome_Usuário</label>
           </v-list-item>
-          <v-list-item @click="sair">Sair</v-list-item>
+            <v-list-item @click="logout">Sair</v-list-item>
         </v-list-item-group>
       </v-app-bar>
     </v-app>
@@ -119,16 +119,24 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
 export default {
+  meta: {
+    auth: true
+  },
+  computed: {
+    ...mapState('auth', ['loggedIn'])
+  },
   data() {
     return {
-      nome: "",
+      usuario: "",
       sobrenome: "",
       user: {},
       show: false,
     };
   },
   methods: {
+    ...mapActions('auth', ['logout']),
     sair() {
       this.$router.push({ name: "LoginView" });
     },

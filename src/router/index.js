@@ -1,3 +1,4 @@
+import store from '@/store'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
@@ -48,5 +49,20 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.auth)) {
+    if(!store.state.auth.loggedIn) {
+      next({
+        name: 'Login'
+      })
+    } else{
+      next()
+    }
+  } else{
+    next()
+  }
+}
+)
 
 export default router
